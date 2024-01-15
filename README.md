@@ -15,9 +15,12 @@ Siga os passos abaixo para configurar seu ambiente de desenvolvimento:
 git clone https://github.com/Wernersbach/blog_mvc_b2b.git web
 ```
 
-### 2. Subir os Containers Docker
+### 2. Subir os Containers Docker e Iniciar
 ```bash
 docker-compose build --no-cache
+```
+```bash
+docker-compose up -d
 ```
 
 ### 3. Acessar a Aplicação
