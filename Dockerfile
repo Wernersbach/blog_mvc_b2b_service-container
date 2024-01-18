@@ -7,5 +7,11 @@ COPY web/ /var/www/html/
 # Extensões do PDO MySQL
 RUN docker-php-ext-install pdo pdo_mysql
 
+# Habilitar o módulo rewrite do Apache
+RUN a2enmod rewrite
+
+# Alterar a configuração para permitir .htaccess com AllowOverride All
+RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
+
 # Expondo a porta 80 para acessar o Apache
 EXPOSE 80

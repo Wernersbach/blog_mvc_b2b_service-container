@@ -23,6 +23,17 @@ docker-compose build --no-cache
 docker-compose up -d
 ```
 
+### 4. Criação das tabelas no banco
+```bash
+docker-compose exec db bash
+```
+
+#### Eexecute este comando dentro do container:
+
+```bash
+mysql -u root -psecret blog < /docker-entrypoint-initdb.d/init-db.sql
+```
+
 ### 3. Acessar a Aplicação
 http://localhost:8000
 
